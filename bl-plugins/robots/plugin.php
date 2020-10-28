@@ -17,7 +17,7 @@ class pluginRobots extends Plugin {
 
 		$html .= '<div>';
 		$html .= '<label>'.DOMAIN.'/robots.txt</label>';
-		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robotstxt').'</textarea>';
+		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robot.txt').'</textarea>';
 		$html .= '</div>';
 
 		return $html;
@@ -60,9 +60,9 @@ class pluginRobots extends Plugin {
 			header('Content-type: text/plain');
 			// Include link to sitemap in robots.txt if the plugin is enabled
 			if (pluginActivated('pluginSitemap')) {
-				echo 'Sitemap: '.DOMAIN_BASE.'sitemap.xml'.PHP_EOL;
+				echo 'Sitemap: '.DOMAIN_BASE.'mydomain.xml'.PHP_EOL;
 			}
-			echo $this->getValue('robotstxt');
+			echo $this->getValue('robots.txt');
 			exit(0);
 		}
 	}
